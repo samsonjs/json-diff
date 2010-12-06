@@ -1,0 +1,73 @@
+body {
+	background-color: lightblue;
+}
+
+#results li > span, #results ul > span {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+#results li {
+	margin-top: 1px;
+	padding-left: 15px;
+}
+#results ul {
+	padding-left: 15px;
+	margin-left: -15px;
+	padding-top: 0px;
+	margin-top: 0px;
+	background: url(open.png) no-repeat 2px 5px;
+	list-style-type: none;
+}
+#results ul[closed="yes"] {
+	background: url(closed.png) no-repeat 2px 5px;
+}
+#results ul[closed="yes"] > * {
+	display: none;
+}
+#results ul[closed="yes"] > *:first-child {
+	display: block;
+}
+.typeName {
+	color: gray;
+}
+.changed {
+	background-color: #fcff7f;
+}
+.changed.key {
+  background-color: #eee;
+}
+
+.added {
+	background-color: #8bff7f;
+}
+.removed {
+	background-color: #fd7f7f;
+}
+
+textarea {
+	width: 49%;
+	height: 200px;
+}
+
+.contentbox {
+	border: 1px dashed black;
+	background-color: white;
+	padding: 15px;
+	margin: 10px;
+}
+
+h2 {
+	text-align: center;
+	margin: 0px;;
+}
+
+#results {
+	padding-left: 40px;
+}
+
+#inputs {
+	text-align: center;
+}
