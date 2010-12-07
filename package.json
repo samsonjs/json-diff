@@ -1,0 +1,23 @@
+{
+  "name": "jsond",
+  "description": "compare json with a web interface/CLI or API",
+  "version": "0.0.1",
+  "author": "hij1nx <http://githib.com/hij1nx>",
+  "contributors": [
+    { "name": "hij1nx", "email": "hi1jnx.dev@gmail.com" },
+    { "name": "Tom Robinson", "email": "tlr@gmail.com" },
+    { "name": "Sami Samhuri", "email": "samisamhuri@gmail.com" }
+  ],
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/samsonjs/json-diff" 
+  },
+  "keywords": ["cli", "json", "diff", "tools"],
+  "dependencies": {
+    "optimist": ">= 0.0.6",
+    "colors": ">= 0.3.0"
+  },
+  "bin": { "forever": "./bin/jsond" },
+  "main": "./lib/jsond",
+  "engines": { "node": ">= 0.2.0" }
+}

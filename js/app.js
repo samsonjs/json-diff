@@ -55,30 +55,58 @@ if(!window.console){
 
     Init: function() {
 
-      console.log('>>> Init()');
-
-      document.addEventListener("click", this.clickHandler, false);
-
-      jsonBoxA = document.getElementById("jsonA");
-      jsonBoxB = document.getElementById("jsonB");
-
-      jsonDiff.feedback = this.markChanged;
+      var self = this;
       
-      this.populteSamples();
-      this.startCompare();
-    }
-    
-    populteSamples: function() {
+      window.onload = function() {
+
+        console.log('>>> Init()');
+
+        document.addEventListener("click", self.clickHandler, false);
+
+        jsonBoxA = document.getElementById("jsonA");
+        jsonBoxB = document.getElementById("jsonB");
+
+        function populateValues(a, b) {
+          jsonBoxA.value = JSON.stringify(a);
+          jsonBoxB.value = JSON.stringify(b);                  
+        }
+        
+        function populateResults(results) {
+          console.log(results)
+        }
+
+        document.getElementById("swap").addEventListener("click", function() {
+          jsond.swap(populateValues);
+        }, false);
+        
+        document.getElementById("clear").addEventListener("click", function() {
+          jsond.clear(populateValues);
+        }, false);
+        
+        document.getElementById("compare").addEventListener("click", function() {
+          jsond.compare(JSON.parse(jsonBoxA.value), JSON.parse(jsonBoxB.value), "root", populateResults);
+        }, false);
+
+        jsond.feedback = self.markChanged;
+
+        self.assignSamples();
+        self.startCompare();
+
+      };
+
+    },
+
+    assignSamples: function() {
 
       console.log('>>> populateSamples()');
       
-      jsonBoxA.value = JSON.stringify(samples.a);
-      jsonBoxB.value = JSON.stringify(samples.b);      
+      jsonBoxA.value = JSON.stringify(jsond.a = samples.a);
+      jsonBoxB.value = JSON.stringify(jsond.b = samples.b);      
       
     },
 
     startCompare: function () {
-    
+
       console.log('>>> startCompare()');
       var objA, objB;
       n = 0;
@@ -101,7 +129,7 @@ if(!window.console){
       while (results.firstChild)
       results.removeChild(results.firstChild);
 
-      jsonDiff.compareTree(objA, objB, "root", results);
+      jsond.compare(objA, objB, "root", results);
     },
 
     markChanged: function(node) {
@@ -113,7 +141,7 @@ if(!window.console){
       n += 1;
       var nextNode = document.createElement('a');
       nextNode.setAttribute('href', '#change-' + n);
-      nextNode.appendChild(document.createTextNode('↓ next change ↓'))
+      nextNode.appendChild(document.createTextNode('↓ next change ↓'));
       node.appendChild(nextNode);
     },
     

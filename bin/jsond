@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var sys = require("sys"),
+    fs = require("fs"),
+    argv = require('optimist').argv,
+    colors = require("colors"),
+    jsond = require("../js/lib/jsond");
+
+// To-Do: seperate rendering to provision for nodejs output using colors etc.
