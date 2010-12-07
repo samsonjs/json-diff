@@ -35,7 +35,7 @@ var jsond = (typeof exports !== "undefined" ? exports : window).jsond = (functio
       fn(this.a, this.b);
     },
 
-    compare: function(a, b, name, fn) {
+    compare: function(a, b, name, results, fn) {
 
       // To-Do: a and/or b should accept a uri or a json structure.
       // To-Do: this DOM manipulation should be seperated into logic and rendering so that it works with nodejs.
