@@ -2,11 +2,11 @@
   "name": "jsond",
   "description": "compare json with a web interface/CLI or API",
   "version": "0.0.1",
-  "author": "hij1nx <http://githib.com/hij1nx>",
+  "author": "hij1nx <https://github.com/hij1nx>",
   "contributors": [
     { "name": "hij1nx", "email": "hi1jnx.dev@gmail.com" },
     { "name": "Tom Robinson", "email": "tlr@gmail.com" },
-    { "name": "Sami Samhuri", "email": "samisamhuri@gmail.com" }
+    { "name": "Sami Samhuri", "email": "sami.samhuri@gmail.com" }
   ],
   "repository": {
       "type": "git",
